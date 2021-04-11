@@ -198,7 +198,7 @@ function signInWithGoogle(){
         var dateTime = date + ' at ' + time;
 
         //  save in database using realtimedb
-        if(username!=null){
+        if(username!=null && message!=""){
             firebase.database().ref("message").push().set({
                 "sender": username,
                 "message": message,
