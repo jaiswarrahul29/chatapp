@@ -231,6 +231,7 @@ html,body{
     display: block; //important
     background-color: rgb(51,51,51);
     color: $text-color-dark;
+    overflow-y: scroll;
 }
 .chat .login::-webkit-scrollbar{
     width: 0;
