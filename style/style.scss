@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+html,body{
+    scroll-behavior: smooth;
+}
+//-------------------------------------------------------- constant color define--------------------------------------------------------
+    $dark-color:rgb(44, 44, 44);
+    $light-color: white;
+    $text-color-light: rgb(27, 121, 245);
+    $text-color-dark: white;
+
+.main{
+    width: 100%;
+    height: 100%;
+    background-color: $dark-color;
+    color: $text-color-light;
+}
+.main .chat{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+//-------------------------------------------------- nav styling--------------------------------------------------------------------------------
+.main .chat nav{
+    width: 100%;
+    height: 50px;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+.main .chat nav .left,.main .chat nav .right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.main .chat nav .left h4{
+    font-size: 20px;
+}
+.main .chat nav .left img{
+    width: 40px;
+    height: 40px;
+    object-fit: fill;
+    margin-right: 15px;
+}
+.main .chat nav .right span img{
+    width: 30px;
+    height: 30px;
+    object-fit: fill;
+    cursor: pointer;
+}
+#moon{
+    display: none;
+}
+#sun{
+    display: block;
+}
+.main .chat nav .right p{
+    margin-right: 15px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s;
+}
+.main .chat nav .right .signout-btn{
+    display: none;
+}
+
+.main .chat nav .right p:hover{
+    background-color: $text-color-light ;
+    color: $light-color;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+}
+
+//---------------------------------------------------------------- chat area styling ---------------------------------------------------------
+.chat-area{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    padding: .5rem;
+    background-color: rgb(51,51,51);
+    border-radius: 10px;
+    color: $text-color-dark;
+    overflow-y: scroll;
+    display: none; //important
+    border: 2px rgb(51,51,51) solid;
+}
+.chat-area::-webkit-scrollbar{
+    width: 6px;
+    background-color: gray;
+    border-radius: 50px;
+}
+.chat-area::-webkit-scrollbar-thumb{
+    background: $text-color-light;
+    border-radius: 50px;
+}
+.chat-area .title{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 5px 0px;
+    border-bottom: 1px grey solid;
+}
+.chat-area ul{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding-bottom: 25px;
+}
+.chat-area ul li{
+    width: auto;
+    list-style: none;
+    margin: 5px 0;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.chat-area ul li p{
+    margin: 5px 0;
+    padding: 0 5px;
+}
+// name styling
+
+.chat-area ul li h3{
+    color: $text-color-light;
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: capitalize;
+    margin: 3px 0;
+    padding: 0 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+// message styling
+.chat-area ul li h2{
+    font-weight: 300;
+    padding: 5px 8px;
+    background-color: $dark-color;
+    border-radius: 0 30px 30px 25px;
+    padding: 10px 20px;
+    font-size: 15px;
+    text-align: start;
+    margin-left: 10px;
+    // margin-top: 10px;
+    color: white    ;
+}
+// date-time styling
+.chat-area ul li h6{
+    font-weight: 100;
+    font-size: 10px;
+    margin-top: 3px;
+    color: grey;
+    font-weight: 5500;
+    text-transform: capitalize;
+    padding: 0 5px;
+}
+
+// input styling here
+#form{
+    width:100%;
+    position: fixed;
+    bottom: 5px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 0 0.75rem rgba(80, 80, 80,0.6));
+    
+}
+#form .message-input{
+    width: 100%;
+    height: 40px;
+    margin-left:15px;
+    margin-right: 15px;
+    padding: 20px;
+    background-color: $dark-color;
+    border-radius: 50px;
+    border: 0px;
+    color: white;
+    outline: none;
+    
+}
+
+#form .submit-input{
+    position: absolute;
+    bottom: 8px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    background-color: transparent;
+    background-image: url(../image/telegram.png);
+    background-position:center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    border: 0;
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+    outline: none;
+    transition: .3s;
+    
+}
+#sendBtn{
+    display: none;
+}
+
+//-------------------------------------------------- login section styling -----------------------------------------------------------------------------
+.chat .login{
+    position: relative;
+    width: 100%;
+    height: 81vh;
+    margin-top: 20px;
+    padding: 3px;
+    border-radius: 10px;
+    display: block; //important
+    background-color: rgb(51,51,51);
+    color: $text-color-dark;
+}
+.chat .login::-webkit-scrollbar{
+    width: 0;
+}
+.chat .login .login-area{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    
+    
+}
+.chat .login .login-area h2{
+    text-transform: capitalize;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.chat .login .login-area p{
+    text-transform: capitalize;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0;
+}
+.chat .login .login-area .login-method{
+    display: flex;
+    flex-direction: column;
+}
+.chat .login .login-area .login-method .email-password{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start ;
+}
+.chat .login .login-area .login-method .email-password h4{
+    font-weight: 200;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.chat .login .login-area .login-method .email-password input{
+    width: 250px;
+    height: 35px;
+    padding: 3px 3px 3px 10px;
+    border-radius: 3px;
+    outline: none;
+    border: 0;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 5px;
+    border: 1px gray solid;
+}
+.chat .login .login-area .login-method .email-password .btn{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.chat .login .login-area .login-method .email-password .Btn button{
+    background-color: $text-color-light;
+    border: 0;
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    
+}
+.chat .login .login-area .login-method .email-password #signUpBtn{
+    background-color: rgb(95, 243, 95);
+    margin: 0 10px;
+}
+.chat .login .login-area .comment-area p{
+    color: $text-color-light;
+}
+.chat .login .login-area .login-method .email-password .register-text,.chat .login .login-area .login-method .email-password .comment-area{
+    width: 100%;
+}
+
+
+
+
+.chat .login .login-area .login-method .google{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 3px 15px;
+    cursor: pointer;
+    margin: 10px;
+}
+.chat .login .login-area .login-method .google img{
+    width: 25px;
+    height: 25px;
+    object-fit: fill;
+    margin-right: 10px;
+}
+.chat .login .login-area .login-method .google p{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+//----------------------------------------------------- light/dark mode css --------------------------------------------------------------------
+//use of this class IN
+//.main
+//.main .chat nav
+//.main .chat .chat-area
+//.chat .login .login-area
+.light-mode{
+    background-color: rgb(243, 243, 243);
+    color: black;
+}
+
+//---------------------------------------- MOBILE RESPONSIVE CSS HERE -----------------------------------------------------------------------------
+
+//----------- AT 500px width ------------------------------------------
+@media screen and (max-width: 500px) {
+    //nav css here
+    .main .chat nav {
+        padding: 0rem;
+    }
+    .main .chat nav .left img {
+        width: 30px;
+        height: 30px;
+    }
+    .main .chat nav .left h4 {
+        font-size: 16px;
+    }
+    .main .chat nav .right p{
+        font-size: 14px;
+        margin-right: 5px;
+    }
+    .main .chat nav .right span img{
+        width: 25px;
+        height: 25px;
+    }
+
+    // chat css here
+
+    .chat-area .title {
+        font-size: 16px;
+    }
+    .chat-area ul li h2 {
+        padding: 8px 16px;
+    }
+    .chat-area::-webkit-scrollbar{
+        width: 0px;
+    }
+
+
+    //login css here
+
+    .chat .login .login-area h2 {
+        font-size: 25px;
+    }
+    .chat .login .login-area p {
+        font-size: 13px;
+    }
+    .chat .login .login-area .login-method .email-password h4 {
+        font-size: 13px;
+    }
+    .chat .login .login-area .login-method .email-password input {
+        width: 250px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    //signin with google css here
+
+    .chat .login .login-area .login-method .google {
+        padding:0px;
+        margin: 5px;
+    }
+    .chat .login .login-area .login-method .google p {
+        font-size: 12px;
+    }
+}

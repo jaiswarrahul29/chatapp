@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>chat-application &#128293</title>
+</head>
+<body onload="setTheme()">
+    
+    <div class="main" >
+
+        <div class="chat">
+<!-------------------------------------------------------------- navbar section -------------------------------------------------------------------->
+            <nav class="navs">
+                <div class="left">
+                    <img src="data:image/png;base64,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" />
+                    <h4>Real time chatting</h4>
+                </div>
+
+                <div class="right">
+                    <p class="signout-btn" id="signout-btn" onclick="signout()">SIGNOUT</p>
+                    <span id="themeBtn" onclick="">
+                        <img id="moon" src="./image/moon.svg" alt="moon" onclick="moon()">
+                        <img id="sun" src="./image/sun.svg" alt="sun" onclick="sun()">
+                    </span> 
+                </div>
+            </nav>
+
+<!-------------------------------------------------------------- chat section -------------------------------------------------------------------->
+
+            <section class="chat-area" id="chat-area" >
+                <p class="title">welcome to real time chatting &#128293</p>
+                <ul id="messages-list" onload="onLoadCompleted()">
+
+                    <!-- example of list -->
+                    <!-- <li>
+                        <h3 >Name</h3>
+                        <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, aspernatur necessitatibus illum, culpa error ipsum amet dicta, porro numquam impedit dolor. Recusandae dicta, distinctio voluptate officia sunt nostrum illum. Neque?</h2>
+                        <h6>time/date</h6>
+                    </li> -->
+
+                   
+
+                    
+                    
+                </ul>
+
+
+                <form id="form" onsubmit="return sendMessage()">
+                
+                    <input class="message-input" type="text" id="message" placeholder="Enter your message here..." autocomplete="off" onkeyup="keyup()">
+                    <input class="submit-input" type="submit" value="" id="sendBtn">
+                
+                    <ul id="messages-list"></ul>
+                </form>
+                
+            </section>
+
+<!------------------------------------------------------------ login section ------------------------------------------------------------------>
+            <section class="login" id="login-area">
+
+                <div class="login-area">
+                    <h2>real time chat &#128293</h2>
+                    <p>the easiest way to chat with people <br> all around the world. &#129304</p>
+
+                    <div class="comment-area">
+                        <p id="comment-text"></p>
+                    </div>
+
+
+                    <div class="login-method">
+
+                        <div class="email-password">
+
+                            <div class="email">
+                                <h4>Email</h4>
+                                <input type="email" id="email" autocomplete="off" placeholder="Enter Your Email">
+                            </div>
+
+                            <div class="password">
+                                <h4>Password</h4>
+                                <input type="password" id="password" autocomplete="off" placeholder="Enter Your Password">
+                            </div>
+
+                            <div class="btn" >
+                                <button id="signInBtn" onclick="signIn()">SignIn</button>
+                                <button id="signUpBtn" onclick="signUp()">SignUp</button>
+                            </div>
+
+                        </div>
+
+                        <div class="or-section">
+                            <p>---------- OR -----------</p>
+                        </div>
+
+                        <div class="google" onclick="signInWithGoogle()">
+                            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGQkJCMDA7IiBkPSJNMTEzLjQ3LDMwOS40MDhMOTUuNjQ4LDM3NS45NGwtNjUuMTM5LDEuMzc4QzExLjA0MiwzNDEuMjExLDAsMjk5LjksMCwyNTYNCgljMC00Mi40NTEsMTAuMzI0LTgyLjQ4MywyOC42MjQtMTE3LjczMmgwLjAxNGw1Ny45OTIsMTAuNjMybDI1LjQwNCw1Ny42NDRjLTUuMzE3LDE1LjUwMS04LjIxNSwzMi4xNDEtOC4yMTUsNDkuNDU2DQoJQzEwMy44MjEsMjc0Ljc5MiwxMDcuMjI1LDI5Mi43OTcsMTEzLjQ3LDMwOS40MDh6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojNTE4RUY4OyIgZD0iTTUwNy41MjcsMjA4LjE3NkM1MTAuNDY3LDIyMy42NjIsNTEyLDIzOS42NTUsNTEyLDI1NmMwLDE4LjMyOC0xLjkyNywzNi4yMDYtNS41OTgsNTMuNDUxDQoJYy0xMi40NjIsNTguNjgzLTQ1LjAyNSwxMDkuOTI1LTkwLjEzNCwxNDYuMTg3bC0wLjAxNC0wLjAxNGwtNzMuMDQ0LTMuNzI3bC0xMC4zMzgtNjQuNTM1DQoJYzI5LjkzMi0xNy41NTQsNTMuMzI0LTQ1LjAyNSw2NS42NDYtNzcuOTExaC0xMzYuODlWMjA4LjE3NmgxMzguODg3TDUwNy41MjcsMjA4LjE3Nkw1MDcuNTI3LDIwOC4xNzZ6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojMjhCNDQ2OyIgZD0iTTQxNi4yNTMsNDU1LjYyNGwwLjAxNCwwLjAxNEMzNzIuMzk2LDQ5MC45MDEsMzE2LjY2Niw1MTIsMjU2LDUxMg0KCWMtOTcuNDkxLDAtMTgyLjI1Mi01NC40OTEtMjI1LjQ5MS0xMzQuNjgxbDgyLjk2MS02Ny45MWMyMS42MTksNTcuNjk4LDc3LjI3OCw5OC43NzEsMTQyLjUzLDk4Ljc3MQ0KCWMyOC4wNDcsMCw1NC4zMjMtNy41ODIsNzYuODctMjAuODE4TDQxNi4yNTMsNDU1LjYyNHoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGMTQzMzY7IiBkPSJNNDE5LjQwNCw1OC45MzZsLTgyLjkzMyw2Ny44OTZjLTIzLjMzNS0xNC41ODYtNTAuOTE5LTIzLjAxMi04MC40NzEtMjMuMDEyDQoJYy02Ni43MjksMC0xMjMuNDI5LDQyLjk1Ny0xNDMuOTY1LDEwMi43MjRsLTgzLjM5Ny02OC4yNzZoLTAuMDE0QzcxLjIzLDU2LjEyMywxNTcuMDYsMCwyNTYsMA0KCUMzMTguMTE1LDAsMzc1LjA2OCwyMi4xMjYsNDE5LjQwNCw1OC45MzZ6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" />
+                                <p>sign in with google</p>
+                        </div>
+
+                        <!-- <div class="facebook">
+                            <img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMnB0IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im00ODMuNzM4MjgxIDBoLTQ1NS41Yy0xNS41OTc2NTYuMDA3ODEyNS0yOC4yNDIxODcyNSAxMi42NjAxNTYtMjguMjM4MjgxIDI4LjI2MTcxOXY0NTUuNWMuMDA3ODEyNSAxNS41OTc2NTYgMTIuNjYwMTU2IDI4LjI0MjE4NyAyOC4yNjE3MTkgMjguMjM4MjgxaDQ1NS40NzY1NjJjMTUuNjA1NDY5LjAwMzkwNiAyOC4yNTc4MTMtMTIuNjQ0NTMxIDI4LjI2MTcxOS0yOC4yNSAwLS4wMDM5MDYgMC0uMDA3ODEyIDAtLjAxMTcxOXYtNDU1LjVjLS4wMDc4MTItMTUuNTk3NjU2LTEyLjY2MDE1Ni0yOC4yNDIxODcyNS0yOC4yNjE3MTktMjguMjM4Mjgxem0wIDAiIGZpbGw9IiM0MjY3YjIiLz48cGF0aCBkPSJtMzUzLjUgNTEydi0xOThoNjYuNzVsMTAtNzcuNWgtNzYuNzV2LTQ5LjM1OTM3NWMwLTIyLjM4NjcxOSA2LjIxNDg0NC0zNy42NDA2MjUgMzguMzE2NDA2LTM3LjY0MDYyNWg0MC42ODM1OTR2LTY5LjEyODkwNmMtNy4wNzgxMjUtLjk0MTQwNi0zMS4zNjMyODEtMy4wNDY4NzUtNTkuNjIxMDk0LTMuMDQ2ODc1LTU5IDAtOTkuMzc4OTA2IDM2LTk5LjM3ODkwNiAxMDIuMTQwNjI1djU3LjAzNTE1NmgtNjYuNXY3Ny41aDY2LjV2MTk4em0wIDAiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" />
+                            <p>sign in with facebook</p>
+                        </div> -->
+                        
+                    </div>
+                </div>
+
+            </section>
+
+            
+        </div>
+
+    </div>
+    
+    
+    
+    
+
+    
+<!------------------------------------------------------------ firbase script ------------------------------------------------------------------>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <!-- include firebase auth -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <!-- include firebase database -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+    <!-- include firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    
+<!------------------------------------------------------------ Inclide js file ------------------------------------------------------------------>
+    <script src="index.js"></script>
+
+    
+</body>
+</html>
