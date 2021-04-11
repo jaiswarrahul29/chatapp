@@ -308,6 +308,11 @@ html, body {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.chat .login .login-area::-webkit-scrollbar {
+  width: 0;
 }
 
 .chat .login .login-area h2 {
