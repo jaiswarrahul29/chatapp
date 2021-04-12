@@ -20,6 +20,7 @@ html,body{
     height: 100%;
     background-color: $dark-color;
     color: $text-color-light;
+    transition: .3s;
 }
 .main .chat{
     width: 100%;
@@ -36,7 +37,7 @@ html,body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    text-transform: capitalize;
+    text-transform: capitalize;  
 }
 .main .chat nav .left,.main .chat nav .right{
     display: flex;
@@ -57,12 +58,15 @@ html,body{
     height: 30px;
     object-fit: fill;
     cursor: pointer;
+    transition: 3s;
 }
 #moon{
     display: none;
+    transition: 1s;
 }
 #sun{
     display: block;
+    transition: 1s;
 }
 .main .chat nav .right p{
     margin-right: 15px;
@@ -94,6 +98,7 @@ html,body{
     overflow-y: scroll;
     display: none; //important
     border: 2px rgb(51,51,51) solid;
+    transition: .3s;
 }
 .chat-area::-webkit-scrollbar{
     width: 6px;
@@ -245,6 +250,7 @@ html,body{
     justify-content: center;
     border-radius: 10px;
     overflow-y: scroll;  
+    transition: .3s;
 }
 .chat .login .login-area::-webkit-scrollbar{
     width: 0;
@@ -294,7 +300,9 @@ html,body{
     display: flex;
     flex-direction: row;
     margin-top: 10px;
+    margin-left: -16px;
 }
+
 .chat .login .login-area .login-method .email-password .Btn button{
     background-color: $text-color-light;
     border: 0;
@@ -302,7 +310,21 @@ html,body{
     height: 30px;
     border-radius: 3px;
     cursor: pointer;
+    margin-right: 5px;
     
+}
+.chat .login .login-area .login-method .email-password .Btn .signInBtn,.chat .login .login-area .login-method .email-password .Btn .singUpBtn{
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#signInBtn{
+    display: block;
+}
+#signUpBtn{
+    display: block;
 }
 .chat .login .login-area .login-method .email-password #signUpBtn{
     background-color: rgb(95, 243, 95);
@@ -314,10 +336,6 @@ html,body{
 .chat .login .login-area .login-method .email-password .register-text,.chat .login .login-area .login-method .email-password .comment-area{
     width: 100%;
 }
-
-
-
-
 .chat .login .login-area .login-method .google{
     display: flex;
     flex-direction: row;
@@ -353,9 +371,53 @@ html,body{
     color: black;
 }
 
-//---------------------------------------- MOBILE RESPONSIVE CSS HERE -----------------------------------------------------------------------------
 
-//----------- AT 500px width ------------------------------------------
+//-----------------------------------------------------------spiner css here -------------------------------------------------------------------------------------
+.loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+.webloader{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(44, 44, 44,0.9);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+.loader-web{
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    width: 70px;
+    height: 70px;
+}
+.loader-in{
+    display: none;
+}
+
+.loader-up{
+    display: none   ;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+//---------------------------------------- MOBILE RESPONSIVE CSS HERE -----------------------------------------------------------------------------
+//--------------------------------- AT 500px width ---------------------------------------------------
 @media screen and (max-width: 500px) {
     //nav css here
     .main .chat nav {
@@ -377,7 +439,7 @@ html,body{
         height: 25px;
     }
 
-    // chat css here
+    //---------------------------------------------------------------------------- chat css here----------------------------------------------------------------------------
 
     .chat-area .title {
         font-size: 16px;
@@ -390,7 +452,7 @@ html,body{
     }
 
 
-    //login css here
+    //---------------------------------------------------------------login css here ----------------------------------------------------------------------------
 
     .chat .login .login-area h2 {
         font-size: 25px;
@@ -407,7 +469,7 @@ html,body{
         font-size: 14px;
     }
 
-    //signin with google css here
+    //----------------------------------------------------signin with google css here-----------------------------------------------------------------------
 
     .chat .login .login-area .login-method .google {
         padding:0px;
@@ -417,3 +479,7 @@ html,body{
         font-size: 12px;
     }
 }
+
+
+
+

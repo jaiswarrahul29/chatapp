@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <title>chat-application &#128293</title>
+
+    <script>
+
+    </script>
 </head>
 <body onload="setTheme()">
-    
+<!-------------------------------------------------------------- spiner -------------------------------------------------------------------->
+<div class="webloader" id="webLoader">
+    <div class="loader loader-web" ></div>
+</div>
+<!-------------------------------------------------------------- main section -------------------------------------------------------------------->
     <div class="main" >
 
         <div class="chat">
@@ -38,11 +46,7 @@
                         <h3 >Name</h3>
                         <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, aspernatur necessitatibus illum, culpa error ipsum amet dicta, porro numquam impedit dolor. Recusandae dicta, distinctio voluptate officia sunt nostrum illum. Neque?</h2>
                         <h6>time/date</h6>
-                    </li> -->
-
-                   
-
-                    
+                    </li> -->   
                     
                 </ul>
 
@@ -84,8 +88,14 @@
                             </div>
 
                             <div class="btn" >
-                                <button id="signInBtn" onclick="signIn()">SignIn</button>
-                                <button id="signUpBtn" onclick="signUp()">SignUp</button>
+                                <div class="signInBtn">
+                                    <button id="signInBtn" onclick="signIn()">SignIn</button>
+                                    <div class="loader loader-in" id="signInLoader"></div>
+                                </div>
+                                <div class="singUpBtn">
+                                    <button id="signUpBtn" onclick="signUp()">SignUp</button>
+                                    <div class="loader loader-up" id="signUpLoader"></div>
+                                </div>
                             </div>
 
                         </div>

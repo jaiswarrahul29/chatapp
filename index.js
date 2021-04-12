@@ -37,6 +37,15 @@ firebase.auth().onAuthStateChanged(function (user) {
 // ---------------------------------------------------------------------------login using email and password--------------------------------------------------------------------------------------------
 
 function signIn(){
+    // signIn btn and loader
+    var signInBtn = document.getElementById('signInBtn');
+    var signInLoader = document.getElementById('signInLoader');
+    // signUp btn and loader
+    var signUpBtn = document.getElementById('signUpBtn');
+    var signUpLoader = document.getElementById('signUpLoader');
+    //set button nonvisible and loader visible
+    signInBtn.style.display="none";
+    signInLoader.style.display="block";
 
     // get user credential
     const useremail = document.getElementById('email').value;
@@ -44,6 +53,8 @@ function signIn(){
 
     firebase.auth().signInWithEmailAndPassword(useremail, userpassword)
         .then((userCredential) => {
+            //set comment-text to null value
+            document.getElementById('comment-text').innerHTML = "";
             // Signed in
             var user = firebase.auth().currentUser;
             var emailVerified = user.emailVerified;
@@ -54,6 +65,9 @@ function signIn(){
             }
             else{
                 document.getElementById('comment-text').innerHTML = "Verify your email address!!!"
+                //set button visible and loader nonvisible
+                signInBtn.style.display = "block";
+                signInLoader.style.display = "none";
             }
 
         })
@@ -61,6 +75,9 @@ function signIn(){
             var errorCode = error.code;
             var errorMessage = error.message;
             document.getElementById('comment-text').innerHTML =errorMessage;
+            //set button visible and loader nonvisible
+            signInBtn.style.display = "block";
+            signInLoader.style.display = "none";
         });
 
         // reset the input field 
@@ -73,6 +90,19 @@ function signIn(){
 //------------------------------------------------------------------creating account using email and password--------------------------------------------------------------------------------------------
 
     function signUp(){
+
+        // signIn btn and loader
+        var signInBtn = document.getElementById('signInBtn');
+        var signInLoader = document.getElementById('signInLoader');
+        // signUp btn and loader
+        var signUpBtn = document.getElementById('signUpBtn');
+        var signUpLoader = document.getElementById('signUpLoader');
+
+        //set button nonvisible and loader visible
+        signUpBtn.style.display = "none";
+        signUpLoader.style.display = "block";
+
+
         // get user credential
         const useremail = document.getElementById('email').value;
         const userpassword = document.getElementById('password').value;
@@ -80,6 +110,9 @@ function signIn(){
         firebase.auth().createUserWithEmailAndPassword(useremail, userpassword)
             .then((userCredential) => {
                 // Signed in 
+
+                //set comment-text to null value
+                document.getElementById('comment-text').innerHTML = " ";
 
                  // sending verifcation mail to the user
                  var user = userCredential.user;
@@ -89,12 +122,20 @@ function signIn(){
                  }).catch(function (error) {
                      // An error happened.
                  });
+
+                //set button visible and loader non visible
+                signUpBtn.style.display = "block";
+                signUpLoader.style.display = "none";
             
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
                 document.getElementById('comment-text').innerHTML = errorMessage;
+
+                //set button visible and loader non visible
+                signUpBtn.style.display = "block";
+                signUpLoader.style.display = "none";
                 // ..
             });
         
@@ -152,6 +193,23 @@ function signInWithGoogle(){
         firebase.auth().signOut()
              .then(function () {
                  // Sign-out successful.
+
+                 // signIn btn and loader
+                 var signInBtn = document.getElementById('signInBtn');
+                 var signInLoader = document.getElementById('signInLoader');
+                 // signUp btn and loader
+                 var signUpBtn = document.getElementById('signUpBtn');
+                 var signUpLoader = document.getElementById('signUpLoader');
+
+                 signInBtn.style.display = "block";
+                 signUpBtn.style.display = "block";
+                 signInLoader.style.display = "none";
+                 signUpLoader.style.display = "none";
+
+
+                 //set comment-text to null value
+                 document.getElementById('comment-text').innerHTML = " ";
+                 
                  
              }).catch(function (error) {
                  // An error happened.
@@ -264,6 +322,10 @@ function keyup(){
 function setTheme(){
     const themeName = "dark";
     localStorage.setItem("theme", themeName);
+
+    var loader = document.getElementById('webLoader');
+
+    loader.style.display="none";
 }
 
 function changeTheme(){

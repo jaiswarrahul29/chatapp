@@ -17,6 +17,8 @@ html, body {
   height: 100%;
   background-color: #2c2c2c;
   color: #1b79f5;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .main .chat {
@@ -80,14 +82,20 @@ html, body {
   -o-object-fit: fill;
      object-fit: fill;
   cursor: pointer;
+  -webkit-transition: 3s;
+  transition: 3s;
 }
 
 #moon {
   display: none;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 #sun {
   display: block;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .main .chat nav .right p {
@@ -122,6 +130,8 @@ html, body {
   overflow-y: scroll;
   display: none;
   border: 2px #333333 solid;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .chat-area::-webkit-scrollbar {
@@ -309,6 +319,8 @@ html, body {
           justify-content: center;
   border-radius: 10px;
   overflow-y: scroll;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .chat .login .login-area::-webkit-scrollbar {
@@ -385,6 +397,7 @@ html, body {
       -ms-flex-direction: row;
           flex-direction: row;
   margin-top: 10px;
+  margin-left: -16px;
 }
 
 .chat .login .login-area .login-method .email-password .Btn button {
@@ -394,6 +407,32 @@ html, body {
   height: 30px;
   border-radius: 3px;
   cursor: pointer;
+  margin-right: 5px;
+}
+
+.chat .login .login-area .login-method .email-password .Btn .signInBtn, .chat .login .login-area .login-method .email-password .Btn .singUpBtn {
+  width: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#signInBtn {
+  display: block;
+}
+
+#signUpBtn {
+  display: block;
 }
 
 .chat .login .login-area .login-method .email-password #signUpBtn {
@@ -447,6 +486,70 @@ html, body {
 .light-mode {
   background-color: #f3f3f3;
   color: black;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.webloader {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(44, 44, 44, 0.9);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 5;
+}
+
+.loader-web {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  width: 70px;
+  height: 70px;
+}
+
+.loader-in {
+  display: none;
+}
+
+.loader-up {
+  display: none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 500px) {
