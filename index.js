@@ -217,10 +217,7 @@ function signInWithGoogle(){
      }
 
     //---------------------------------------getting person details function  -------------------------------------------------------------------
-    function getUserName(){
-        
-        
-    }  
+    
 
 //---------------------------------------------- sendbutton function ---------------------------------------------------------------
     function sendMessage() {
@@ -280,11 +277,12 @@ function signInWithGoogle(){
     }
 
 //---------------------------------------listen for a incoming message--------------------------------------------------------------------------
+
 firebase.database().ref("message").on("child_added", function (snapshot) {
     var html = "";
     html += "<li>";
 
-    html += "<h3>" ;
+    html += "<h3>";
     html += snapshot.val().sender;
     html += "</h3>";
 
@@ -300,6 +298,7 @@ firebase.database().ref("message").on("child_added", function (snapshot) {
 
     document.getElementById("messages-list").innerHTML += html;
 });
+
 
 //---------------------------------------------onkeyup to display sent button------------------------------------------------------------------------
 
