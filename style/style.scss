@@ -346,6 +346,7 @@ html,body{
     padding: 3px 15px;
     cursor: pointer;
     margin: 10px;
+    filter: drop-shadow(0 0 0.40rem rgba(80, 80, 80,0.4));
 }
 .chat .login .login-area .login-method .google img{
     width: 25px;
