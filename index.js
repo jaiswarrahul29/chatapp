@@ -317,7 +317,6 @@ function keyup(){
 }
 
 //----------------------------------------------------dark/light mode js here-------------------------------------------------------
-
 function setTheme(){
     const themeName = "dark";
     localStorage.setItem("theme", themeName);
@@ -335,6 +334,7 @@ function changeTheme(){
     var nav = document.querySelector('.main .chat nav');
     var chatarea = document.querySelector('.main .chat .chat-area');
     var loginarea = document.querySelector('.chat .login .login-area');
+    
 
     if(themeStatus=="light")
     {
@@ -342,12 +342,14 @@ function changeTheme(){
         nav.classList.add('light-mode')
         chatarea.classList.add('light-mode')
         loginarea.classList.add('light-mode')
+        
     }
     else{
         mainarea.classList.remove('light-mode')
         nav.classList.remove('light-mode')
         chatarea.classList.remove('light-mode')
         loginarea.classList.remove('light-mode')
+        
     }
 }
 function sun(){

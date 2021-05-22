@@ -141,7 +141,7 @@ html,body{
 .chat-area ul li h3{
     color: $text-color-light;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 13px;
     text-transform: capitalize;
     margin: 3px 0;
     padding: 0 5px;
@@ -152,9 +152,9 @@ html,body{
 }
 // message styling
 .chat-area ul li h2{
-    font-weight: 300;
+    font-weight: 500;
     padding: 5px 8px;
-    background-color: $dark-color;
+    background-color: #1e82c5;
     border-radius: 0 30px 30px 25px;
     padding: 10px 20px;
     font-size: 15px;
@@ -198,7 +198,6 @@ html,body{
     border: 0px;
     color: white;
     outline: none;
-    
 }
 
 #form .submit-input{
