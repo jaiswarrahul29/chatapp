@@ -330,7 +330,9 @@ html,body{
     margin: 0 10px;
 }
 .chat .login .login-area .comment-area p{
-    color: $text-color-light;
+    color: #f51b1b;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 .chat .login .login-area .login-method .email-password .register-text,.chat .login .login-area .login-method .email-password .comment-area{
     width: 100%;

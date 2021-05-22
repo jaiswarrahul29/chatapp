@@ -441,7 +441,9 @@ html, body {
 }
 
 .chat .login .login-area .comment-area p {
-  color: #1b79f5;
+  color: #f51b1b;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .chat .login .login-area .login-method .email-password .register-text, .chat .login .login-area .login-method .email-password .comment-area {
