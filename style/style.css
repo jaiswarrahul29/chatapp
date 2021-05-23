@@ -5,7 +5,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  overflow: hidden;
 }
 
 html, body {
@@ -100,11 +99,16 @@ html, body {
 
 .main .chat nav .right p {
   margin-right: 15px;
-  padding: 5px 10px;
+  padding: 5px;
   border-radius: 3px;
   cursor: pointer;
   -webkit-transition: .3s;
   transition: .3s;
+  font-size: 30px;
+}
+
+.main .chat nav .right .VideoCallBtn {
+  display: none;
 }
 
 .main .chat nav .right .signout-btn {
@@ -112,10 +116,7 @@ html, body {
 }
 
 .main .chat nav .right p:hover {
-  background-color: #1b79f5;
   color: white;
-  -webkit-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
-          box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
 }
 
 .chat-area {
@@ -565,11 +566,11 @@ html, body {
     height: 30px;
   }
   .main .chat nav .left h4 {
-    font-size: 16px;
+    font-size: 20px;
   }
   .main .chat nav .right p {
-    font-size: 14px;
-    margin-right: 5px;
+    font-size: 25px;
+    margin-right: 10px;
   }
   .main .chat nav .right span img {
     width: 25px;

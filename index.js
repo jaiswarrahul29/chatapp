@@ -22,14 +22,16 @@ firebase.auth().onAuthStateChanged(function (user) {
 
         if (emailVerified) {
             document.getElementById('chat-area').style.display = "block";
-            document.getElementById('login-area').style.display = "none";
             document.getElementById('signout-btn').style.display = "block";
+            document.getElementById('VideoCallBtn').style.display = "block";
+            document.getElementById('login-area').style.display = "none";
         }
     } else {
         // No user is signed in.
-        document.getElementById('chat-area').style.display = "none";
         document.getElementById('login-area').style.display = "block";
+        document.getElementById('chat-area').style.display = "none";
         document.getElementById('signout-btn').style.display = "none";
+        document.getElementById('VideoCallBtn').style.display = "none";
 
     }
 });

@@ -4,8 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
 }
+
 html,body{
     scroll-behavior: smooth;
 }
@@ -70,19 +70,21 @@ html,body{
 }
 .main .chat nav .right p{
     margin-right: 15px;
-    padding: 5px 10px;
+    padding: 5px;
     border-radius: 3px;
     cursor: pointer;
     transition: .3s;
+    font-size: 30px;
+}
+.main .chat nav .right .VideoCallBtn{
+    display: none;
 }
 .main .chat nav .right .signout-btn{
     display: none;
 }
 
-.main .chat nav .right p:hover{
-    background-color: $text-color-light ;
-    color: $light-color;
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+.main .chat nav .right p:hover{ 
+    color: white;
 }
 
 //---------------------------------------------------------------- chat area styling ---------------------------------------------------------
@@ -430,11 +432,11 @@ html,body{
         height: 30px;
     }
     .main .chat nav .left h4 {
-        font-size: 16px;
+        font-size: 20px;
     }
     .main .chat nav .right p{
-        font-size: 14px;
-        margin-right: 5px;
+        font-size: 25px;
+        margin-right: 10px;
     }
     .main .chat nav .right span img{
         width: 25px;

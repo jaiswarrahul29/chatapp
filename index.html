@@ -2,13 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/svg+xml" href="./image/email.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <title>chat-application &#128293</title>
 
-    <script>
-
-    </script>
+    <!-- fontawsome cnd -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <title>Vibing</title>
 </head>
 <body onload="setTheme()">
 <!-------------------------------------------------------------- spiner -------------------------------------------------------------------->
@@ -24,11 +25,12 @@
             <nav class="navs">
                 <div class="left">
                     <img src="data:image/png;base64,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" />
-                    <h4>Real time chatting</h4>
+                    <h4>Vibing</h4>
                 </div>
 
                 <div class="right">
-                    <p class="signout-btn" id="signout-btn" onclick="signout()">SIGNOUT</p>
+                    <p class="VideoCallBtn" id="VideoCallBtn" onclick="window.location= './video-call/index.html'"><i class="fas fa-video"></i></p>
+                    <p class="signout-btn" id="signout-btn" onclick="signout()"><i class="fas fa-sign-out-alt"></i></p>
                     <span id="themeBtn" onclick="">
                         <img id="moon" src="./image/moon.svg" alt="moon" onclick="moon()">
                         <img id="sun" src="./image/sun.svg" alt="sun" onclick="sun()">
@@ -62,7 +64,8 @@
                 </form>
                 
             </section>
-
+<!------------------------------------------------------------ videocall section ------------------------------------------------------------------>
+            
 <!------------------------------------------------------------ login section ------------------------------------------------------------------>
             <section class="login" id="login-area">
 
@@ -143,6 +146,7 @@
     
 <!------------------------------------------------------------ Inclide js file ------------------------------------------------------------------>
     <script src="index.js"></script>
+
 
     
 </body>

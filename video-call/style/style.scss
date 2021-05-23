@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar{
+    width: 6px;
+    background-color: gray;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(27, 121, 245);
+    border-radius: 50px;
+}
+//navbar css
+.navs-bar{
+    width: 100%;
+    height: auto;
+    margin-top: -20px;
+
+    .navs{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left{
+            float: left;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 45px;
+                height: 45px;
+                margin-right: 10px;
+            }
+            h4{
+                font-size: 20px;
+                color: rgb(27, 121, 245);
+            }
+        }
+
+        .right{
+            display: flex;
+            flex-direction: row;
+            transition: .3s;
+
+            p{
+                font-size: 30px;
+                margin-right: 20px;
+                cursor: pointer;
+                color: rgb(27, 121, 245);
+                transition: .3s;
+
+                :hover{
+                    color: white;
+                }
+            }
+            span img{
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+    }
+}
+.main-video {
+    width: 100%;
+    height: 100vh;
+    padding: 0 2rem;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(44, 44, 44);
+}
+video{
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.title-video{
+    padding: 1rem;
+    letter-spacing: 1px;
+}
+.video{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#webcamVideo{
+    position: absolute;
+    width: 13vw;
+    height: 17vh;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 10px;
+    // border: 2px gray solid;
+}
+#remoteVideo{
+    width: 80vw;
+    height: 80vh;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.buttons-video{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#webcamButton,#callButton,#callInput,#answerButton,#hangupButton{
+    border: 0;
+    width: auto;
+    height: 35px;
+    padding: 0 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-family: sans-serif;
+    font-size: 17px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    i{
+        margin: 0 5px;
+    }
+
+}
+// start webcam button 
+#webcamButton{
+    background-color:#FBB02D;  
+}
+// create call id button
+#callButton{
+    background-color:#f9844a;
+}
+// input button
+#callInput{
+    cursor:text;
+}
+// answer button
+#answerButton{
+    background-color:#38b000;
+}
+// hangup button
+#hangupButton{
+    background-color:#f94144;
+}
+@media screen and (max-width: 900px){
+    // nav css
+
+    .navs-bar{
+        margin-top: -30px;
+
+    .navs{
+        .left{
+            img{
+                width: 35px;
+                height: 35px;
+            }
+        }
+        .right{
+            p{
+                font-size: 28px;
+            }
+        }
+    }
+}
+.main-video{
+        height: 100%;
+        padding:1rem;
+   }
+}
+
+@media screen and (max-width: 700px){
+    #webcamVideo{
+        width: 16vw;
+        height: 17vh;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .main-video{
+        height: 100%;
+        padding:1rem;
+   }
+    #webcamVideo{
+        width: 22vw;
+        height: 17vh;
+    }
+    #remoteVideo{
+        width: 90vw;
+        height: 70vh;
+    }
+}
