@@ -159,6 +159,8 @@ hangupButton.onclick = () => {
   callInput.value=" ";
   pc.close();
   remoteStream=null;
+  localStream = null;
+  webcamVideo.srcObject = localStream;
   remoteVideo.srcObject = remoteStream;
   
 }
