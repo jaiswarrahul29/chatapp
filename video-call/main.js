@@ -162,6 +162,8 @@ hangupButton.onclick = () => {
   localStream = null;
   webcamVideo.srcObject = localStream;
   remoteVideo.srcObject = remoteStream;
+
+  window.location ="https://jaiswarrahul29.github.io/chatapp/video-call/index.html"
   
 }
 
